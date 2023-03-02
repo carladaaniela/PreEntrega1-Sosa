@@ -1,10 +1,13 @@
 import "./CardWidget.css";
+import { CartIcon } from "../icons";
 
 function CardWidget() {
   return (
-    <div className="cardWidget">
-      <span className="hardCode">24</span>
-      <i className=""></i>
+    <div className="cartConteiner cardWidget">
+      <div className="cart">
+        <CartIcon />
+        <span className="cartNumber hardCode">24</span>
+      </div>
     </div>
   );
 }

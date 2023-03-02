@@ -4,29 +4,42 @@ import CardWidget from "../CardWidget";
 
 function NavBar() {
   return (
-    <div>
+    <div className="optionsContainer">
       <ul>
         <li>
-          <a href="">Remeras</a>
+          <a className="options" href="">
+            Remeras
+          </a>
         </li>
 
         <li>
-          <a href="">Pantalones</a>
+          <a className="options" href="">
+            Pantalones
+          </a>
         </li>
 
         <li>
-          <a href="">Camperas</a>
+          <a className="options" href="">
+            Camperas
+          </a>
         </li>
 
         <li>
-          <a href="">Calzado</a>
+          <a className="options" href="">
+            Calzado
+          </a>
         </li>
 
         <li>
-          <a href="">Accesorios</a>
+          <a className="options" href="">
+            Accesorios
+          </a>
+        </li>
+
+        <li>
+          <CardWidget />
         </li>
       </ul>
-      <CardWidget />
     </div>
   );
 }

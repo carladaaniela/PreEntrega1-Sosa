@@ -1,7 +1,7 @@
 import "./ItemListContainer.css";
 
 function ItemListContainer({ greeting }) {
-  return <div>{greeting}</div>;
+  return <div className="greetinContainer">{greeting}</div>;
 }
 
 export default ItemListContainer;
