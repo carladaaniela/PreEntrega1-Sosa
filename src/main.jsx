@@ -1,23 +1,39 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App";
-import "./index.css";
-
+import Navbar from "./components/NavBar";
+import ItemDetailContainer from "./components/ItemDetailContainer";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import ItemListContainer from "./components/ItemListContainer";
+import "./index.css";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <App />,
+    element: (
+      <>
+        <Navbar />
+        <ItemListContainer />
+      </>
+    ),
   },
   {
     path: "/category/:id",
-    element: <ItemListContainer />,
+    element: (
+      <>
+        <Navbar />
+        <ItemListContainer />
+      </>
+    ),
   },
   {
     path: "/item/:id",
-    element: <ItemDetailContainer />,
+    element: (
+      <>
+        <Navbar />
+        <ItemDetailContainer />
+      </>
+    ),
   },
 ]);
 

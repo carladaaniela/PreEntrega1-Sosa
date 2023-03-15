@@ -1,39 +1,45 @@
 import "./Navbar.css";
 import "../CardWidget";
 import CardWidget from "../CardWidget";
+import { Link } from "react-router-dom";
 
 function NavBar() {
   return (
     <div className="optionsContainer">
       <ul>
         <li>
-          <a className="options" href="">
+          <Link className="options" to={"/"}>
+            logo
+          </Link>
+        </li>
+        <li>
+          <Link className="options" to={"/category/remeras"}>
             Remeras
-          </a>
+          </Link>
         </li>
 
         <li>
-          <a className="options" href="">
+          <Link className="options" to={"/category/pantalones"}>
             Pantalones
-          </a>
+          </Link>
         </li>
 
         <li>
-          <a className="options" href="">
+          <Link className="options" to={"/category/camperas"}>
             Camperas
-          </a>
+          </Link>
         </li>
 
         <li>
-          <a className="options" href="">
+          <Link className="options" to={"/category/calzado"}>
             Calzado
-          </a>
+          </Link>
         </li>
 
         <li>
-          <a className="options" href="">
+          <Link className="options" to={"/category/accesorios"}>
             Accesorios
-          </a>
+          </Link>
         </li>
 
         <li>

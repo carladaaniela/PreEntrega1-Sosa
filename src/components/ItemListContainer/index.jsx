@@ -1,8 +1,10 @@
 import { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
 import "./ItemListContainer.css";
 import ItemList from "../ItemList";
 
 function ItemListContainer() {
+  const { categoryId } = useParams();
   const mockItems = [
     {
       id: 1,
@@ -10,6 +12,7 @@ function ItemListContainer() {
       description: "Description del producto 1",
       price: 9.9,
       pictureUrl: "https://via.placeholder.com/150",
+      category: "remeras",
     },
 
     {
@@ -18,6 +21,7 @@ function ItemListContainer() {
       description: "Description del producto 1",
       price: 9.9,
       pictureUrl: "https://via.placeholder.com/150",
+      category: "pantalones",
     },
 
     {
@@ -26,6 +30,7 @@ function ItemListContainer() {
       description: "Description del producto 1",
       price: 9.9,
       pictureUrl: "https://via.placeholder.com/150",
+      category: "camperas",
     },
 
     {
@@ -34,6 +39,16 @@ function ItemListContainer() {
       description: "Description del producto 1",
       price: 9.9,
       pictureUrl: "https://via.placeholder.com/150",
+      category: "calzado",
+    },
+
+    {
+      id: 5,
+      title: "Producto 5",
+      description: "Description del producto 5",
+      price: 9.9,
+      pictureUrl: "https://via.placeholder.com/150",
+      category: "accesorios",
     },
   ];
 
@@ -50,13 +65,21 @@ function ItemListContainer() {
     setTimeout(() => {
       mockPromise()
         .then((response) => {
-          setItems(response);
+          console.log(categoryId);
+          let data = response;
+          if (typeof categoryId !== "undefined") {
+            const responseData = response;
+            data = responseData.filter((id) => {
+              return id.categoria === categoryId;
+            });
+          }
+          setItems(data);
         })
         .finally(() => {
           setLoader(false);
         });
     }, 2000);
-  }, []);
+  }, [categoryId]);
 
   return (
     <div>
