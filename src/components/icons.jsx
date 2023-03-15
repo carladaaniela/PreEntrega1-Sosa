@@ -6,9 +6,9 @@ export const CartIcon = () => {
       viewBox="0 0 32 32"
       fill="none"
       stroke="#000"
-      stroke-linecap="round"
-      stroke-linejoin="round"
-      stroke-width="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth="2"
     >
       <path d="M6 6 L30 6 27 19 9 19 M27 23 L10 23 5 2 2 2" />
       <circle cx="25" cy="27" r="2" />

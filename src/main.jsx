@@ -18,7 +18,7 @@ const router = createBrowserRouter([
     ),
   },
   {
-    path: "/category/:id",
+    path: "/category/:categoryId",
     element: (
       <>
         <Navbar />
@@ -27,7 +27,7 @@ const router = createBrowserRouter([
     ),
   },
   {
-    path: "/item/:id",
+    path: "/item/:itemId",
     element: (
       <>
         <Navbar />

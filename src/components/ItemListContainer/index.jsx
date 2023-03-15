@@ -8,7 +8,7 @@ function ItemListContainer() {
   const mockItems = [
     {
       id: 1,
-      title: "Producto 1",
+      title: "Remera",
       description: "Description del producto 1",
       price: 9.9,
       pictureUrl: "https://via.placeholder.com/150",
@@ -17,7 +17,7 @@ function ItemListContainer() {
 
     {
       id: 2,
-      title: "Producto 2",
+      title: "Pantalon",
       description: "Description del producto 1",
       price: 9.9,
       pictureUrl: "https://via.placeholder.com/150",
@@ -65,12 +65,11 @@ function ItemListContainer() {
     setTimeout(() => {
       mockPromise()
         .then((response) => {
-          console.log(categoryId);
           let data = response;
           if (typeof categoryId !== "undefined") {
             const responseData = response;
             data = responseData.filter((id) => {
-              return id.categoria === categoryId;
+              return id.category === categoryId;
             });
           }
           setItems(data);
@@ -78,7 +77,7 @@ function ItemListContainer() {
         .finally(() => {
           setLoader(false);
         });
-    }, 2000);
+    }, 1000);
   }, [categoryId]);
 
   return (
