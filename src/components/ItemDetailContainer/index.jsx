@@ -1,8 +1,9 @@
 import { useState, useEffect } from "react";
-import "./ItemListContainer.css";
+import ItemDetail from "../ItemDetail";
 import ItemList from "../ItemList";
+import "./ItemDetailContainer.css";
 
-function ItemListContainer() {
+function ItemDetailContainer() {
   const mockItems = [
     {
       id: 1,
@@ -64,7 +65,7 @@ function ItemListContainer() {
       {loader ? (
         <p>Cargando...</p>
       ) : items.length > 0 ? (
-        <ItemList items={items} />
+        <ItemDetail items={items} />
       ) : (
         <p>No hay productos</p>
       )}
@@ -72,4 +73,4 @@ function ItemListContainer() {
   );
 }
 
-export default ItemListContainer;
+export default ItemDetailContainer;
