@@ -1,13 +1,14 @@
 import ItemCount from "../ItemCount";
 import "./ItemDetail.css";
 
-function ItemDetail({ item }) {
+function ItemDetail({ items }) {
   return (
     <div>
-      <img src={item.pictureUrl} alt={item.title} />
-      <h2>{item.title}</h2>
-      <p>{item.description}</p>
-      <p>Precio: ${item.price}</p>
+      <h1>Detalle de producto</h1>
+      <img src={items.pictureUrl} alt={items.title} />
+      <h2>{items.title}</h2>
+      <p>{items.description}</p>
+      <p>Precio: ${items.price}</p>
       <ItemCount />
     </div>
   );

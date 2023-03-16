@@ -9,7 +9,7 @@ function NavBar() {
       <ul>
         <li>
           <Link className="options" to={"/"}>
-            logo
+            <img className="logoRott" src="/src/assets/img/logo.svg" />
           </Link>
         </li>
         <li>

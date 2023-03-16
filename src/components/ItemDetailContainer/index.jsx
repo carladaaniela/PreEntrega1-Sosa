@@ -2,39 +2,48 @@ import { useState, useEffect } from "react";
 import ItemDetail from "../ItemDetail";
 import ItemList from "../ItemList";
 import "./ItemDetailContainer.css";
+import { useParams } from "react-router-dom";
 
 function ItemDetailContainer() {
+  const { itemId } = useParams();
   const mockItems = [
     {
       id: 1,
-      title: "Producto 1",
+      title: "Remera",
       description: "Description del producto 1",
       price: 9.9,
-      pictureUrl: "https://via.placeholder.com/150",
+      pictureUrl: "/src/assets/img/violetshirt.svg",
     },
 
     {
       id: 2,
-      title: "Producto 2",
-      description: "Description del producto 1",
+      title: "Pantalon",
+      description: "Description del producto 2",
       price: 9.9,
-      pictureUrl: "https://via.placeholder.com/150",
+      pictureUrl: "/src/assets/img/purplepants.svg",
     },
 
     {
       id: 3,
-      title: "Producto 3",
-      description: "Description del producto 1",
+      title: "Campera",
+      description: "Description del producto 3",
       price: 9.9,
-      pictureUrl: "https://via.placeholder.com/150",
+      pictureUrl: "/src/assets/img/purplehoodie.svg",
     },
 
     {
       id: 4,
-      title: "Producto 4",
-      description: "Description del producto 1",
+      title: "Calzado",
+      description: "Description del producto 4",
       price: 9.9,
-      pictureUrl: "https://via.placeholder.com/150",
+      pictureUrl: "/src/assets/img/purpleshoes.svg",
+    },
+    {
+      id: 5,
+      title: "Accesorios",
+      description: "Description del producto 5",
+      price: 9.9,
+      pictureUrl: "/src/assets/img/purplenicklace2.svg",
     },
   ];
 
@@ -44,14 +53,18 @@ function ItemDetailContainer() {
     });
   };
 
-  const [items, setItems] = useState([]);
+  const [item, setItem] = useState({});
   const [loader, setLoader] = useState(true);
 
   useEffect(() => {
     setTimeout(() => {
       mockPromise()
         .then((response) => {
-          setItems(response);
+          const handleData = response.filter((product) => {
+            return product.id === Number(itemId);
+          });
+          const data = handleData[0];
+          setItem(data);
         })
         .finally(() => {
           setLoader(false);
@@ -61,11 +74,10 @@ function ItemDetailContainer() {
 
   return (
     <div>
-      <h1>Lista de Productos</h1>
       {loader ? (
         <p>Cargando...</p>
-      ) : items.length > 0 ? (
-        <ItemDetail items={items} />
+      ) : item ? (
+        <ItemDetail items={item} />
       ) : (
         <p>No hay productos</p>
       )}

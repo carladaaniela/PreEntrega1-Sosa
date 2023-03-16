@@ -11,7 +11,7 @@ function ItemListContainer() {
       title: "Remera",
       description: "Description del producto 1",
       price: 9.9,
-      pictureUrl: "https://via.placeholder.com/150",
+      pictureUrl: "/src/assets/img/violetshirt.svg",
       category: "remeras",
     },
 
@@ -20,34 +20,34 @@ function ItemListContainer() {
       title: "Pantalon",
       description: "Description del producto 1",
       price: 9.9,
-      pictureUrl: "https://via.placeholder.com/150",
+      pictureUrl: "/src/assets/img/purplepants.svg",
       category: "pantalones",
     },
 
     {
       id: 3,
-      title: "Producto 3",
+      title: "Campera",
       description: "Description del producto 1",
       price: 9.9,
-      pictureUrl: "https://via.placeholder.com/150",
+      pictureUrl: "/src/assets/img/purplehoodie.svg",
       category: "camperas",
     },
 
     {
       id: 4,
-      title: "Producto 4",
+      title: "Calzado",
       description: "Description del producto 1",
       price: 9.9,
-      pictureUrl: "https://via.placeholder.com/150",
+      pictureUrl: "/src/assets/img/purpleshoes.svg",
       category: "calzado",
     },
 
     {
       id: 5,
-      title: "Producto 5",
+      title: "Accesorio",
       description: "Description del producto 5",
       price: 9.9,
-      pictureUrl: "https://via.placeholder.com/150",
+      pictureUrl: "/src/assets/img/purplenicklace2.svg",
       category: "accesorios",
     },
   ];
@@ -82,7 +82,7 @@ function ItemListContainer() {
 
   return (
     <div>
-      <h1>Lista de Productos</h1>
+      <h1 className="tittleProductList">Lista de Productos</h1>
       {loader ? (
         <p>Cargando...</p>
       ) : items.length > 0 ? (

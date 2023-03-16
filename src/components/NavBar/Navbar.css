@@ -23,9 +23,9 @@
 ul {
   display: flex;
   list-style-type: none;
-  font-size: 18px;
+  font-size: 22px;
   justify-content: space-around;
-  align-self: center;
+  align-items: center;
 }
 
 ul li {
@@ -38,4 +38,9 @@ a {
   text-decoration: none;
   display: block;
   color: var(--clr-white);
+}
+
+.logoRott {
+  width: 60px;
+  height: 60px;
 }
