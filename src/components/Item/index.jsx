@@ -12,7 +12,11 @@ const Item = ({ item }) => {
         <h2>{item.title}</h2>
         <p>{item.description}</p>
         <p>Precio: ${item.price}</p>
+        <p>Stock: {item.stock}</p>
         <ItemCount className="itemCount" />
+        <Link to="/cart">
+          <button className="endPurchase">Terminar mi compra</button>
+        </Link>
       </div>
     </div>
   );

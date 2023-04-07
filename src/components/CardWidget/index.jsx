@@ -1,12 +1,15 @@
 import "./CardWidget.css";
 import { CartIcon } from "../icons";
+import { useContext } from "react";
+import { Context } from "../../context";
 
 function CardWidget() {
+  const { productsAdded } = useContext(Context);
   return (
     <div className="cartConteiner cardWidget">
       <div className="cart">
         <CartIcon />
-        <span className="cartNumber hardCode">24</span>
+        {productsAdded.length}
       </div>
     </div>
   );
