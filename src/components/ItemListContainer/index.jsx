@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import "./ItemListContainer.css";
 import ItemList from "../ItemList";
 
 function ItemListContainer() {
@@ -83,7 +82,7 @@ function ItemListContainer() {
       stock: 14,
     },
     {
-      id: 8,
+      id: 9,
       title: "Polera Violeta",
       description: "Polera violeta de algodon",
       price: 4000,

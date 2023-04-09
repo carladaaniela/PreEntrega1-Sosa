@@ -1,4 +1,3 @@
-import "./ItemCount.css";
 import { useState } from "react";
 import { useCartContext } from "../../context";
 

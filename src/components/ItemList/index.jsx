@@ -1,4 +1,3 @@
-import "./ItemList.css";
 import Item from "../Item/index";
 
 const ItemList = ({ items }) => {

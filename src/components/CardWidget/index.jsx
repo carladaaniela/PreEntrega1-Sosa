@@ -1,4 +1,3 @@
-import "./CardWidget.css";
 import { Link } from "react-router-dom";
 import { CartIcon } from "../icons";
 import { useCartContext } from "../../context";

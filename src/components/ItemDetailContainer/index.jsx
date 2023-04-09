@@ -1,4 +1,3 @@
-import "./ItemDetailContainer.css";
 import { useState, useEffect } from "react";
 import ItemDetail from "../ItemDetail";
 import ItemList from "../ItemList";
@@ -82,6 +81,15 @@ function ItemDetailContainer() {
       pictureUrl: "/src/assets/img/sweatervioleta.svg",
       category: "camperas",
       stock: 14,
+    },
+    {
+      id: 9,
+      title: "Polera Violeta",
+      description: "Polera violeta de algodon",
+      price: 4000,
+      pictureUrl: "/src/assets/img/poleravioleta.svg",
+      category: "camperas",
+      stock: 10,
     },
   ];
 
