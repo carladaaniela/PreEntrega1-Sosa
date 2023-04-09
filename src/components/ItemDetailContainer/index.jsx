@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import ItemDetail from "../ItemDetail";
 import ItemList from "../ItemList";
+import ItemCount from "../ItemCount";
 import "./ItemDetailContainer.css";
 import { useParams } from "react-router-dom";
 
@@ -55,6 +56,33 @@ function ItemDetailContainer() {
       pictureUrl: "/src/assets/img/purplenicklace2.svg",
       category: "accesorios",
       stock: 25,
+    },
+    {
+      id: 6,
+      title: "Remera violeta",
+      description: "Remera violeta hombre",
+      price: 2000,
+      pictureUrl: "/src/assets/img/remeravioleta.svg",
+      category: "remeras",
+      stock: 30,
+    },
+    {
+      id: 7,
+      title: "Jean",
+      description: "Jean Lila",
+      price: 7000,
+      pictureUrl: "/src/assets/img/jeanvioleta.svg",
+      category: "pantalones",
+      stock: 5,
+    },
+    {
+      id: 8,
+      title: "Sweater Lila",
+      description: "Sweater lila tejido",
+      price: 8500,
+      pictureUrl: "/src/assets/img/sweatervioleta.svg",
+      category: "camperas",
+      stock: 14,
     },
   ];
 

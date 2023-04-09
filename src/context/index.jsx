@@ -1,15 +1,53 @@
-import { createContext, useState } from "react";
+import { createContext, useState, useContext } from "react";
 
 export const Context = createContext();
+
+export const useCartContext = () => useContext(Context);
+
 export function CustomProvider({ children }) {
   const [productsAdded, setProductsAdded] = useState([]);
 
-  function onAdd(product, quantity) {
-    setProductsAdded((prevState) => prevState.concat(product));
-  }
+  const onAdd = (newProduct, quantity) => {
+    const idProd = productsAdded.findIndex(
+      (product) => product.id === newProduct.id
+    );
+
+    if (idProd !== -1) {
+      productsAdded[idProd].selectedQuantity += newProduct.selectedQuantity;
+      setProductsAdded([...productsAdded]);
+    } else {
+      setProductsAdded([...productsAdded, newProduct]);
+    }
+  };
+
+  const totalPrice = () =>
+    productsAdded.reduce(
+      (count, prod) => (count += prod.selectedQuantity * prod.price),
+      0
+    );
+
+  const totalQuantity = () =>
+    productsAdded.reduce((count, prod) => (count += prod.selectedQuantity), 0);
+
+  const deleteProduct = (id) => {
+    setProductsAdded(productsAdded.filter((prod) => prod.id !== id));
+  };
+
+  const emptyCart = () => {
+    setProductsAdded([]);
+  };
 
   return (
-    <Context.Provider value={{ productsAdded, onAdd }}>
+    <Context.Provider
+      value={{
+        productsAdded,
+        onAdd,
+        totalPrice,
+        totalQuantity,
+        deleteProduct,
+        emptyCart,
+      }}
+    >
       {children}
     </Context.Provider>
   );

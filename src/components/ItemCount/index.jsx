@@ -2,6 +2,7 @@ import { useState } from "react";
 import "./ItemCount.css";
 
 const ItemCount = ({ stock, initial, onAdd }) => {
+  const [middleCount, setMiddleCount] = useState(0);
   const [count, setCount] = useState(initial);
 
   const handleIncrement = () => {
@@ -22,31 +23,43 @@ const ItemCount = ({ stock, initial, onAdd }) => {
 
   return (
     <div className="item-count-container">
-      <button
-        className="item-count-button"
-        onClick={handleDecrement}
-        disabled={count <= 1}
-      >
-        -
-      </button>
-      <span className="item-count">{count}</span>
-      <button
-        className="item-count-button"
-        onClick={handleIncrement}
-        disabled={count >= stock}
-      >
-        +
-      </button>
-      <button
-        className="item-count-add-button"
-        onClick={handleAddToCart}
-        disabled={count > stock || count < 1}
-      >
-        Agregar al Carrito
-      </button>
+      <div className="add-remove">
+        <button
+          className="item-count-button"
+          onClick={handleDecrement}
+          disabled={count <= 1}
+        >
+          -
+        </button>
+        <span>{count}</span>
+        <button
+          className="item-count-button middle-button"
+          onClick={() => setMiddleCount(count)}
+          disabled={count < 1 || count > stock}
+        >
+          {middleCount ? middleCount : ""}
+        </button>
+        <button
+          className="item-count-button"
+          onClick={handleIncrement}
+          disabled={count >= stock}
+        >
+          +
+        </button>
+      </div>
+      <div>
+        <button
+          className="item-count-add-button"
+          onClick={handleAddToCart}
+          disabled={count > stock || count < 1}
+        >
+          Agregar al Carrito
+        </button>
+      </div>
       {count > stock && (
         <p className="item-count-error">No hay suficiente stock</p>
       )}
+      <span className="selected-count">{count}</span>
     </div>
   );
 };

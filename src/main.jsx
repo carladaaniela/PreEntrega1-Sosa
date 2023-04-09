@@ -3,37 +3,41 @@ import ReactDOM from "react-dom/client";
 import App from "./App";
 import Navbar from "./components/NavBar";
 import ItemDetailContainer from "./components/ItemDetailContainer";
+import Layout from "./components/Layout";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import ItemListContainer from "./components/ItemListContainer";
+import { CustomProvider } from "./context";
 import "./index.css";
 
 const router = createBrowserRouter([
   {
-    path: "/",
-    element: (
-      <>
-        <Navbar />
-        <ItemListContainer />
-      </>
-    ),
-  },
-  {
-    path: "/category/:categoryId",
-    element: (
-      <>
-        <Navbar />
-        <ItemListContainer />
-      </>
-    ),
-  },
-  {
-    path: "/item/:itemId",
-    element: (
-      <>
-        <Navbar />
-        <ItemDetailContainer />
-      </>
-    ),
+    element: <Layout />,
+    children: [
+      {
+        path: "/",
+        element: (
+          <>
+            <ItemListContainer />
+          </>
+        ),
+      },
+      {
+        path: "/category/:categoryId",
+        element: (
+          <>
+            <ItemListContainer />
+          </>
+        ),
+      },
+      {
+        path: "/item/:itemId",
+        element: (
+          <>
+            <ItemDetailContainer />
+          </>
+        ),
+      },
+    ],
   },
 ]);
 

@@ -1,8 +1,27 @@
 .item-count-container {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: space-between;
   margin-bottom: 20px;
+}
+
+.add-remove {
+  display: flex;
+  flex-direction: row;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+.middle-button {
+  width: 40px;
+  height: 40px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 24px;
+  line-height: 1;
+  color: #000;
+  cursor: pointer;
 }
 
 .item-count-button {
@@ -18,8 +37,15 @@
 }
 
 .item-count {
+  width: 40px;
+  height: 40px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
   font-size: 24px;
-  font-weight: bold;
+  line-height: 1;
+  color: #000;
+  font-style: bolder;
 }
 
 .item-count-add-button {
@@ -44,4 +70,9 @@
 
 .item-count-error {
   color: red;
+}
+
+.selected-count {
+  font-size: 1.5rem;
+  margin: 0 1rem;
 }
