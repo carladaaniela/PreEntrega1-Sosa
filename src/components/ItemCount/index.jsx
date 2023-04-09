@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useCartContext } from "../../context";
+import { useCartContext } from "@CartContext";
 
 const ItemCount = ({ stock, item }) => {
   const [selectedQuantity, setSelectedQuantity] = useState(1);
@@ -23,8 +23,8 @@ const ItemCount = ({ stock, item }) => {
   };
 
   return (
-    <div className="item-count-container">
-      <div className="add-remove">
+    <>
+      <div className="item-count-container ">
         <button
           className="item-count-button"
           onClick={handleDecrement}
@@ -40,8 +40,6 @@ const ItemCount = ({ stock, item }) => {
         >
           +
         </button>
-      </div>
-      <div>
         <button
           className="item-count-add-button"
           onClick={handleAddToCart}
@@ -49,11 +47,11 @@ const ItemCount = ({ stock, item }) => {
         >
           Agregar al Carrito
         </button>
+        {selectedQuantity > stock && (
+          <p className="item-count-error">No hay suficiente stock</p>
+        )}
       </div>
-      {selectedQuantity > stock && (
-        <p className="item-count-error">No hay suficiente stock</p>
-      )}
-    </div>
+    </>
   );
 };
 

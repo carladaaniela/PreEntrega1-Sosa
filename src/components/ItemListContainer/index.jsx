@@ -31,7 +31,7 @@ function ItemListContainer() {
       description: "Buzo canguro purpura",
       price: 3500,
       pictureUrl: "/src/assets/img/purplehoodie.svg",
-      category: "camperas",
+      category: "abrigos",
       stock: 15,
     },
 
@@ -78,7 +78,7 @@ function ItemListContainer() {
       description: "Sweater lila tejido",
       price: 8500,
       pictureUrl: "/src/assets/img/sweatervioleta.svg",
-      category: "camperas",
+      category: "abrigos",
       stock: 14,
     },
     {
@@ -87,7 +87,7 @@ function ItemListContainer() {
       description: "Polera violeta de algodon",
       price: 4000,
       pictureUrl: "/src/assets/img/poleravioleta.svg",
-      category: "camperas",
+      category: "abrigos",
       stock: 10,
     },
   ];
@@ -124,7 +124,7 @@ function ItemListContainer() {
     <div>
       <h1 className="tittleProductList">Lista de Productos</h1>
       {loader ? (
-        <div className="container-fluid mx-auto">
+        <div className="container">
           <div className="row">
             <div className="col-lg-12 text-center">
               <div className="spinner-border" role="status"></div>

@@ -24,7 +24,7 @@ function NavBar() {
         </li>
 
         <li>
-          <Link className="options" to={"/category/camperas"}>
+          <Link className="options" to={"/category/abrigos"}>
             Abrigos
           </Link>
         </li>

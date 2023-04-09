@@ -6,19 +6,16 @@ function ItemDetail({ items }) {
 
   return (
     <div>
-      <div className="itemDetail">
-        <h1>Detalle de producto</h1>
-        <img src={pictureUrl} alt={title} />
-        <h2>{title}</h2>
-        <p>{description}</p>
-        <p>Precio: ${price}</p>
-        <p>Stock: {stock}</p>
-        <ItemCount stock={5} />
+      <h1>Detalle de producto</h1>
+      <img src={pictureUrl} alt={title} />
+      <h2>{title}</h2>
+      <p>{description}</p>
+      <p>Precio: ${price}</p>
+      <p>Stock: {stock}</p>
+      <ItemCount stock={5} />
+      <Link to="/cart">
         <button>Terminar mi compra</button>
-      </div>
-      <div>
-        <Link to="/cart"></Link>
-      </div>
+      </Link>
     </div>
   );
 }

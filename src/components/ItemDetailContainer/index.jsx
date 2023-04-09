@@ -32,7 +32,7 @@ function ItemDetailContainer() {
       description: "Buzo canguro purpura",
       price: 3500,
       pictureUrl: "/src/assets/img/purplehoodie.svg",
-      category: "camperas",
+      category: "abrigos",
       stock: 15,
     },
 
@@ -79,7 +79,7 @@ function ItemDetailContainer() {
       description: "Sweater lila tejido",
       price: 8500,
       pictureUrl: "/src/assets/img/sweatervioleta.svg",
-      category: "camperas",
+      category: "abrigos",
       stock: 14,
     },
     {
@@ -88,7 +88,7 @@ function ItemDetailContainer() {
       description: "Polera violeta de algodon",
       price: 4000,
       pictureUrl: "/src/assets/img/poleravioleta.svg",
-      category: "camperas",
+      category: "abrigos",
       stock: 10,
     },
   ];
