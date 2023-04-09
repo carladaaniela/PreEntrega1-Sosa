@@ -23,7 +23,7 @@ const Item = ({ item }) => {
           <p>Stock: {item.stock}</p>
         </div>
 
-        <div>
+        <div className="buttonContainer">
           <ItemCount className="itemCount" />
           <Link to="/cart">
             <button className="endPurchase">Terminar mi compra</button>

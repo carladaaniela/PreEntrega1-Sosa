@@ -1,16 +1,19 @@
 import "./CardWidget.css";
+import { Link } from "react-router-dom";
 import { CartIcon } from "../icons";
-import { useContext } from "react";
-import { Context } from "../../context";
+import { useCartContext } from "../../context";
 
 function CardWidget() {
-  const { productsAdded } = useContext(Context);
+  const { productsAdded } = useCartContext();
+
   return (
-    <div className="cartConteiner cardWidget">
-      <div className="cart">
-        <CartIcon />
-        {productsAdded.length}
-      </div>
+    <div className="cartConteiner">
+      <Link to={"/cart"}>
+        <div className="cart">
+          <CartIcon />
+          {productsAdded.length}
+        </div>
+      </Link>
     </div>
   );
 }

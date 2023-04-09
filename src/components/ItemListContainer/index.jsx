@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import "./ItemListContainer.css";
 import ItemList from "../ItemList";
-import ItemCount from "../ItemCount";
 
 function ItemListContainer() {
   const { categoryId } = useParams();
@@ -83,6 +82,15 @@ function ItemListContainer() {
       category: "camperas",
       stock: 14,
     },
+    {
+      id: 8,
+      title: "Polera Violeta",
+      description: "Polera violeta de algodon",
+      price: 4000,
+      pictureUrl: "/src/assets/img/poleravioleta.svg",
+      category: "camperas",
+      stock: 10,
+    },
   ];
 
   const mockPromise = () => {
@@ -117,7 +125,14 @@ function ItemListContainer() {
     <div>
       <h1 className="tittleProductList">Lista de Productos</h1>
       {loader ? (
-        <p>Cargando...</p>
+        <div className="container-fluid mx-auto">
+          <div className="row">
+            <div className="col-lg-12 text-center">
+              <div className="spinner-border" role="status"></div>
+              <h2 className="tittleProductList">Cargandoo...</h2>
+            </div>
+          </div>
+        </div>
       ) : items.length > 0 ? (
         <ItemList items={items} />
       ) : (

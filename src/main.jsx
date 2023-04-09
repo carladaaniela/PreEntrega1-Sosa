@@ -3,11 +3,13 @@ import ReactDOM from "react-dom/client";
 import App from "./App";
 import Navbar from "./components/NavBar";
 import ItemDetailContainer from "./components/ItemDetailContainer";
-import Layout from "./components/Layout";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import ItemListContainer from "./components/ItemListContainer";
 import { CustomProvider } from "./context";
-import "./index.css";
+import ItemListContainer from "./components/ItemListContainer";
+import "./sass/styles.scss";
+import * as bootstrap from "bootstrap";
+import Layout from "./components/Layout";
+import Cart from "./components/Cart";
 
 const router = createBrowserRouter([
   {
@@ -34,6 +36,14 @@ const router = createBrowserRouter([
         element: (
           <>
             <ItemDetailContainer />
+          </>
+        ),
+      },
+      {
+        path: "/cart",
+        element: (
+          <>
+            <Cart />
           </>
         ),
       },

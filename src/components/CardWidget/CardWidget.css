@@ -6,7 +6,7 @@
 .cartNumber {
   position: absolute;
   color: var(--clr-white);
-  margin-left: 10px;
+  margin-left: 20px;
 }
 
 .cart {

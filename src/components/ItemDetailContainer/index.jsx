@@ -1,8 +1,7 @@
+import "./ItemDetailContainer.css";
 import { useState, useEffect } from "react";
 import ItemDetail from "../ItemDetail";
 import ItemList from "../ItemList";
-import ItemCount from "../ItemCount";
-import "./ItemDetailContainer.css";
 import { useParams } from "react-router-dom";
 
 function ItemDetailContainer() {
@@ -114,7 +113,14 @@ function ItemDetailContainer() {
   return (
     <div>
       {loader ? (
-        <p>Cargando...</p>
+        <div className="container">
+          <div className="row">
+            <div className="col-lg-12 text-center">
+              <div className="spinner-border" role="status"></div>
+              <h2 className="tittleProductList">Cargandoo...</h2>
+            </div>
+          </div>
+        </div>
       ) : item ? (
         <ItemDetail items={item} />
       ) : (

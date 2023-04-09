@@ -1,24 +1,26 @@
-import { useState } from "react";
 import "./ItemCount.css";
+import { useState } from "react";
+import { useCartContext } from "../../context";
 
-const ItemCount = ({ stock, initial, onAdd }) => {
-  const [middleCount, setMiddleCount] = useState(0);
-  const [count, setCount] = useState(initial);
+const ItemCount = ({ stock, item }) => {
+  const [selectedQuantity, setSelectedQuantity] = useState(1);
+
+  const { onAdd } = useCartContext();
+
+  const handleAddtoCart = (quantity) => {
+    setSelectedQuantity(quantity);
+  };
 
   const handleIncrement = () => {
-    if (count < stock) {
-      setCount(count + 1);
-    }
+    setSelectedQuantity(selectedQuantity + 1);
   };
 
   const handleDecrement = () => {
-    if (count > 1) {
-      setCount(count - 1);
-    }
+    setSelectedQuantity(selectedQuantity - 1);
   };
 
   const handleAddToCart = () => {
-    onAdd(count);
+    onAdd({ ...item, selectedQuantity });
   };
 
   return (
@@ -27,22 +29,15 @@ const ItemCount = ({ stock, initial, onAdd }) => {
         <button
           className="item-count-button"
           onClick={handleDecrement}
-          disabled={count <= 1}
+          disabled={selectedQuantity <= 1}
         >
           -
         </button>
-        <span>{count}</span>
-        <button
-          className="item-count-button middle-button"
-          onClick={() => setMiddleCount(count)}
-          disabled={count < 1 || count > stock}
-        >
-          {middleCount ? middleCount : ""}
-        </button>
+        <span className="item-count">{selectedQuantity}</span>
         <button
           className="item-count-button"
           onClick={handleIncrement}
-          disabled={count >= stock}
+          disabled={selectedQuantity >= stock}
         >
           +
         </button>
@@ -51,15 +46,14 @@ const ItemCount = ({ stock, initial, onAdd }) => {
         <button
           className="item-count-add-button"
           onClick={handleAddToCart}
-          disabled={count > stock || count < 1}
+          disabled={selectedQuantity > stock || selectedQuantity < 1}
         >
           Agregar al Carrito
         </button>
       </div>
-      {count > stock && (
+      {selectedQuantity > stock && (
         <p className="item-count-error">No hay suficiente stock</p>
       )}
-      <span className="selected-count">{count}</span>
     </div>
   );
 };
