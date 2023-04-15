@@ -8,7 +8,7 @@ function NavBar() {
       <ul>
         <li>
           <Link className="options" to={"/"}>
-            <img className="logoRott" src="/src/assets/img/logo.svg" />
+            <img className="logoRott" src="./logo.png" />
           </Link>
         </li>
         <li>
