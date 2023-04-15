@@ -7,12 +7,13 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { CustomProvider } from "@CartContext";
 import ItemListContainer from "./components/ItemListContainer";
 import "./scss/styles.scss";
+import { FirebaseInit } from "./utilities/FirebaseCfg";
 import Layout from "./components/Layout";
 // Import all of Bootstrap's JS
 import * as bootstrap from "bootstrap";
-
 import Cart from "./components/Cart";
 
+FirebaseInit();
 const router = createBrowserRouter([
   {
     element: <Layout />,

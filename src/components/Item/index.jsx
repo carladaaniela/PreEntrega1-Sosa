@@ -5,7 +5,14 @@ const Item = ({ item }) => {
   return (
     <>
       <div className="card my-2">
-        <img className="card-img-top" src={item.pictureUrl} alt={item.title} />
+        <Link to={`/item/${item.id}`}>
+          <img
+            className="card-img-top"
+            src={item.pictureUrl}
+            alt={item.title}
+            loading="lazy"
+          />
+        </Link>
         <div className="card-body">
           <h2 className="card-title">{item.title}</h2>
           <p className="card-text">{item.description}</p>
